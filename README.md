@@ -143,7 +143,7 @@ Download
 
 Several download packages are available. JUnidecode is self-contained and doesn't need any additional library to work (except for the unit tests, which are based on JUnit).
 
-[Please visit the download page of JUnidecode](https://sourceforge.net/projects/junidecode/files/).
+[Please visit the download page of JUnidecode](https://github.com/gcardone/junidecode/releases).
 
 
 License
@@ -151,7 +151,7 @@ License
 
 JUnidecode is licensed under BSD license, which is fairly permissive, compatible with both commercial and free (as in speech software) approved by OSI. You aren't forced, buy if you modify JUnidecode I'd be happy to hear about it.
 
-Copyright (c) 2009-2014, Giuseppe Cardone. All rights reserved.
+Copyright (c) 2009-2015, Giuseppe Cardone. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
