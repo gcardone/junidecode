@@ -127,7 +127,9 @@ This is a little example of JUnidecode capabilities:
 | Gurmukhi               | &#2583;&#2625;&#2608;&#2606;&#2625;&#2582;&#2624;                       | gurmukhii        | Expected: gurmukhi                       |
 | Malayalam              | &#3374;&#3378;&#3375;&#3390;&#3379;&#3330;                              | mlyaallN         | Expected: malayalam                      |
 | Tamil                  | &#2980;&#2990;&#3007;&#2996;&#3021;                                     | tamilll          | Expected: tamil                          |
+| Thai                   | &#3619;&#3634;&#3594;&#3629;&#3634;&#3603;&#3634;&#3592;&#3633;&#3585;&#3619;&#3652;&#3607;&#3618; | raach`aanaacchakraithy | Expected: ratcha anachak thai |
 | CJK Unified Ideographs | &#21271;&#20144;                                                        | Bei Jing         |                                          |
+| Unified Canadian Aboriginal Syllabics | &#5132;&#5144;&#5231;                                    | wewako           | Expected: Ewako (&#202;wako)             |
 | Currency Symbols       | &#8356; &#8359; &#8360;                                                 | L Pts Rs         |                                          |
 | Braille Patterns       | &#10255;&#10263;&#10257;&#10253;&#10250;&#10257;&#10263;                | premier          |                                          |
 | Number Forms           | &#8532; &#8551;                                                         | 2/3 VIII         |                                          |
