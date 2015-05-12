@@ -80,12 +80,12 @@ JUnidecode
 
 JUnidecode is a Java port of [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm) perl module by Sean M. Burke, who deserves all the credit. Ça va sans dire that any bug in JUnicode is all my fault.
 
-JUnidecode official web site is [http://junidecode.sf.net]()
+JUnidecode official web site is [https://github.com/gcardone/junidecode]()
 
-JUnidecode has only one class, net.sf.junidecode.Junidecode, which, as of version 0.1, has only one method: public String unidecode(String s). It takes a String and transliterates it to a valid 7-bit ASCII String (obviously it also strips diacritic marks). For example:
+JUnidecode has only one class, gcardone.junidecode.Junidecode, which, as of version 0.1, has only one method: public String unidecode(String s). It takes a String and transliterates it to a valid 7-bit ASCII String (obviously it also strips diacritic marks). For example:
 
 ```
-import net.sef.junidecode;
+import gcardone.junidecode;
 
 // ...
 
@@ -98,7 +98,7 @@ System.out.print(Junidecode.unidecode(s));
 This code can be made less verbose using the static import feature available on Java 5.0 and higher:
 
 ```
-import static net.sf.junidecode.Junidecode.*;
+import static gcardone.junidecode.Junidecode.*;
 
 // ...
 
