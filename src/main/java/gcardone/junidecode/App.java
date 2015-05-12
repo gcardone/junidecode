@@ -30,7 +30,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static net.sf.junidecode.Junidecode.*;
+import static gcardone.junidecode.Junidecode.*;
 
 /**
  * Simple example application for JUnidecode. If launched with arguments
