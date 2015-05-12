@@ -1,0 +1,18 @@
+Changes in version 0.2
+----------------------
+
+Changed hosting.
+* Renamed package root to gcardone
+
+Changes in version 0.1.1
+------------------------
+
+Bugfix release.
+* Fixed 0x005B "[" translation to "]" - corrected, prints "["
+* Fixed 0x007F translation to non-printable character - corrected, prints ""
+
+
+Changes in version 0.1
+----------------------
+
+* Initial release.

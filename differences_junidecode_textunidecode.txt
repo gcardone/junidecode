@@ -1,0 +1,12 @@
+Character   Code Point      JUnidecode  Text::Unidecode
+            U+007F          (empty)     control character
+ŋ           U+014A          ng          NG
+Ŋ           U+014B          NG          ng
+€           U+20AC          EUR         EU
+₰           U+20B0          Pf           
+₱           U+20B1          P            
+₲           U+20B2          G
+₳           U+20B3          A
+₴           U+20B4          gh          
+₵           U+20B5          C/          
+All the caracters with code point U+20xx

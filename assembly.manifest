@@ -1,0 +1,7 @@
+License: Apache 2.0
+Description: JUnicode
+Implementation-URL: https://github.com/gcardone/junidecode
+Implementation-Version: #version#
+Built-By: #user.name#
+Build-Date: #today#
+Main-Class: #mainclass#
