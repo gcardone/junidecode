@@ -110,52 +110,28 @@ System.out.print(unidecode(s));
 
 This is a little example of JUnidecode capabilities: 
 
--------------------------------------- ----------------------------------------------------------------------------------------------------- ---------------------- --------------------------------------------------------------------
-             Unicode block                                                          Original text                                               Transliteration                                       Notes
--------------------------------------- ----------------------------------------------------------------------------------------------------- ---------------------- --------------------------------------------------------------------
-Basic Latin                            JUnidecode.                                                                                           JUnidecode.            asdasf
-
-Latin-1 Supplement                     r&eacute;sum&eacute;                                                                                  resume                 All diacritic marks are always correctly stripped.
-
-Latin Extended-A                        &#269;e&#353;tina                                                                                     cestina 
-
-Armenian                                &#1344;&#1377;&#1397;&#1377;&#1405;&#1407;&#1377;&#1398;                                              Hayastan 
-
-Cyrillic                                &#1052;&#1086;&#1089;&#1082;&#1074;a                                                                  Moskva 
-
-Greek and Coptic                        &#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;                                                      Ellenika 
-
-Ethiopic                                &#4771;&#4850;&#4661; &#4771;&#4704;&#4707;                                                           'aadise 'aababaa         Ethiopia's capital city Addis Ababa isn't correctly transliterated
-
-Arabic                                  &#1607;&#1575;&#1578;&#1601;                                                                          htf Expected: hatif.     Arabic is extremely hard to transliterate without an intelligent knowledge of the language
-
-Hebrew                                  &#1500;&#1513;&#1493;&#1503; &#1492;&#1511;&#1493;&#1491;&#1513;                                      lshvn hqvdsh             Missing vowels, as expected. The correct transliteration is &quot;Leshon HaKodesh&quot;.
-
-Syriac                                  &#1824;&#1835;&#1826;&#1808; &#1827;&#1816;&#1834;&#1821;&#1821;&#1808;                               lshn' swryy'             Expected: lessana suryaya
-
-Bengali                                 &#2476;&#2494;&#2434;&#2482;&#2494;                                                                   baaNlaa                  Expected: bangla
-
-Devanagari                              &#2342;&#2375;&#2357;&#2344;&#2366;&#2327;&#2352;&#2368;                                              devnaagrii               Expected: devanagari
-
-Gurmukhi                                &#2583;&#2625;&#2608;&#2606;&#2625;&#2582;&#2624;                                                     gurmukhii                Expected: gurmukhi
-
-Malayalam                               &#3374;&#3378;&#3375;&#3390;&#3379;&#3330;                                                            mlyaallN                 Expected: malayalam
-
-Tamil                                   &#2980;&#2990;&#3007;&#2996;&#3021;                                                                   tamilll                  Expected: tamil
-
-Thai                                    &#3619;&#3634;&#3594;&#3629;&#3634;&#3603;&#3634;&#3592;&#3633;&#3585;&#3619;&#3652;&#3607;&#3618;    raach`aanaacchakraithy   Expected: ratcha anachak thai.
-
-CJK Unified Ideographs                  &#21271;&#20144;                                                                                      Bei Jing 
-
-Unified Canadian Aboriginal Syllabics   &#5132;&#5144;&#5231;                                                                                 wewako                   Expected: Ewako (&#202;wako)
-
-Currency Symbols                        &#8356; &#8359; &#8360;                                                                               L Pts Rs 
-
-Braille Patterns                        &#10255;&#10263;&#10257;&#10253;&#10250;&#10257;&#10263;                                              premier                  Braille patterns are substituted with matching latin characters.
-
-Number Forms                            &#8532; &#8551;                                                                                       2/3 VIII 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|     Unicode block      |                                 Original text                           | Transliteration  |                  Notes                   |
+| ---------------------- | ----------------------------------------------------------------------- | ---------------- | ---------------------------------------- |
+| Basic Latin            | JUnidecode.                                                             | JUnidecode.      |                                          |
+| Latin-1 Supplement     | r&eacute;sum&eacute;                                                    | resume           | All diacritic marks are always stripped. |
+| Latin Extended-A       | &#269;e&#353;tina                                                       | cestina          |                                          | 
+| Armenian               | &#1344;&#1377;&#1397;&#1377;&#1405;&#1407;&#1377;&#1398;                | Hayastan         |                                          |
+| Cyrillic               | &#1052;&#1086;&#1089;&#1082;&#1074;a                                    | Moskva           |                                          |
+| Greek and Coptic       | &#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;                        | Ellenika         |                                          |
+| Ethiopic               | &#4771;&#4850;&#4661; &#4771;&#4704;&#4707;                             | 'aadise 'aababaa | Expected: Addis Ababa                    |
+| Arabic                 | &#1607;&#1575;&#1578;&#1601;                                            | htf              | Expected: hatif                          |
+| Hebrew                 | &#1500;&#1513;&#1493;&#1503; &#1492;&#1511;&#1493;&#1491;&#1513;        | lshvn hqvdsh     | Expected: Leshon HaKodesh                |
+| Syriac                 | &#1824;&#1835;&#1826;&#1808; &#1827;&#1816;&#1834;&#1821;&#1821;&#1808; | lshn' swryy'     | Expected: lessana suryaya                |
+| Bengali                | &#2476;&#2494;&#2434;&#2482;&#2494;                                     | baaNlaa          | Expected: bangla                         |
+| Devanagari             | &#2342;&#2375;&#2357;&#2344;&#2366;&#2327;&#2352;&#2368;                | devnaagrii       | Expected: devanagari                     |
+| Gurmukhi               | &#2583;&#2625;&#2608;&#2606;&#2625;&#2582;&#2624;                       | gurmukhii        | Expected: gurmukhi                       |
+| Malayalam              | &#3374;&#3378;&#3375;&#3390;&#3379;&#3330;                              | mlyaallN         | Expected: malayalam                      |
+| Tamil                  | &#2980;&#2990;&#3007;&#2996;&#3021;                                     | tamilll          | Expected: tamil                          |
+| CJK Unified Ideographs | &#21271;&#20144;                                                        | Bei Jing         |                                          |
+| Currency Symbols       | &#8356; &#8359; &#8360;                                                 | L Pts Rs         |                                          |
+| Braille Patterns       | &#10255;&#10263;&#10257;&#10253;&#10250;&#10257;&#10263;                | premier          |                                          |
+| Number Forms           | &#8532; &#8551;                                                         | 2/3 VIII         |                                          |
+ 
 
 Unidecode mapping tables are largely based on Text::Unidecode's tables. However was released in 2001, and meanwhile Unicode was extended. Most notably JUnidecode supports the transliteration of most characters from Unicode's letterlike symbols block, which includes among the others &#8469;, &#8477;, &#8486; (which represents Ohm and is different from &#937;, which is the greek capital letter omega), &#8463; and other lovely nerdy characters.
 
