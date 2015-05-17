@@ -149,7 +149,7 @@ Several download packages are available. JUnidecode is self-contained and doesn'
 License
 -------
 
-JUnidecode is licensed under the Apache License 2.0, 
+JUnidecode is licensed under the Apache License 2.0.
 
 Credits
 -------
