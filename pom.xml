@@ -51,10 +51,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
+                <version>3.7.0</version>
             </plugin>
 
             <plugin>
@@ -65,6 +66,7 @@
                         <manifestFile>${project.build.directory}/assembly.manifest</manifestFile>
                     </archive>
                 </configuration>
+                <version>3.1.0</version>
             </plugin>
 
             <plugin>
@@ -95,7 +97,7 @@
                                 <replace dir="${project.build.directory}">
                                     <include name="assembly.manifest"/>
                                     <replacefilter token="#build#" value="${buildLabel}"/>
-                                    <replacefilter token="#version#" value="${version}"/>
+                                    <replacefilter token="#version#" value="${project.version}"/>
                                     <replacefilter token="#user.name#" value="${user.name}"/>
                                     <replacefilter token="#today#" value="${TODAY}"/>
                                     <replacefilter token="#mainclass#" value="gcardone.junidecode.App"/>
