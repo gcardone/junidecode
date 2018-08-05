@@ -85,7 +85,7 @@ JUnidecode official web site is [https://github.com/gcardone/junidecode]()
 JUnidecode has only one class, gcardone.junidecode.Junidecode, which, as of version 0.1, has only one method: public String unidecode(String s). It takes a String and transliterates it to a valid 7-bit ASCII String (obviously it also strips diacritic marks). For example:
 
 ```
-import or.gcardone.junidecode;
+import org.gcardone.junidecode;
 
 // ...
 
