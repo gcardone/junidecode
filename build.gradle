@@ -1,0 +1,108 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+//        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'net.researchgate.release'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'gcardone'
+version = '0.2'
+
+description = """A Unicode to ASCII Java Library"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven { url "https://dl.bintray.com/rookies/maven" }
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'4.5'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'gcardone.junidecode.App'
+    }
+}
+
+
+task sourceJar(type: Jar) {
+    description = 'A jar that contains source code'
+    classifier = 'sources'
+    from project.sourceSets.main.java
+}
+
+artifacts {
+    archives sourceJar
+}
+
+uploadArchives {
+    // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
+    /*
+        mavenRepoUserName=maven_username
+        mavenRepoPassword=super_secret
+        mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
+        mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
+    */
+    def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
+    def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
+    def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
+    def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
+
+    repositories.mavenDeployer {
+        repository(url: rurl) {
+            authentication(userName: user, password: password)
+        }
+        snapshotRepository(url: surl) {
+            authentication(userName: user, password: password)
+        }
+
+    }
+}
+
+bintray {
+    dryRun = false // Whether to run this as dry-run, without deploying
+    publish = true // If version should be auto published after an upload
+
+    // read from ~/.gradle/gradle.properties. Set those up before releasing
+    user = project.hasProperty('bintrayUser') ? bintrayUser : ''
+    key = project.hasProperty('bintrayApiKey') ? bintrayApiKey : ''
+    configurations = ['archives']
+    pkg {
+        name = 'junidecode'
+        repo = 'maven'
+        userOrg = 'rookies'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/lfoppiano/junidecode'
+        issueTrackerUrl = 'https://github.com/lfoppiano/junidecode/issues'
+        githubRepo = 'lfoppiano/junidecode'
+
+        version {
+            name = rootProject.version
+            vcsTag = rootProject.version
+            released = new Date()
+        }
+    }
+}

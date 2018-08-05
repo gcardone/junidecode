@@ -13,3 +13,9 @@ hs_err_pid*
 
 # Maven target directory
 target/
+build
+.gradle
+
+# Intellij Idea stuff
+*.iml
+.idea
