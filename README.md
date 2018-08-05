@@ -1,3 +1,6 @@
+This repository has been created in order to provide a Maven central build / repository build. 
+
+
 JUnidecode - A Unicode to ASCII Java Library
 ============================================
 

@@ -9,4 +9,4 @@ Character   Code Point      JUnidecode  Text::Unidecode
 ₳           U+20B3          A
 ₴           U+20B4          gh          
 ₵           U+20B5          C/          
-All the caracters with code point U+20xx
+All the characters with code point U+20xx
