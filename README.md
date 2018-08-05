@@ -1,4 +1,23 @@
-This repository has been created in order to provide a Maven central build / repository build. 
+This repository has been created in order to provide a Maven central build / repository build.
+I took the opportunity to migrate to gradle ;-)  
+The package is on his way to Maven Central, however for the moment can be downloaded by adding in your build (maven, gradle) config file: 
+
+- with maven
+```
+<repository>
+    <snapshots>
+        <enabled>false</enabled>
+    </snapshots>
+    <id>bintray-rookies-maven</id>
+    <name>bintray</name>
+    <url>https://dl.bintray.com/rookies/maven</url>
+</repository>
+```
+
+- with gradle 
+```
+maven { url "https://dl.bintray.com/rookies/maven" }
+```
 
 
 JUnidecode - A Unicode to ASCII Java Library
