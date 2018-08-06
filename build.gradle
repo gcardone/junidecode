@@ -95,9 +95,9 @@ bintray {
         repo = 'maven'
         userOrg = 'rookies'
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/lfoppiano/junidecode'
-        issueTrackerUrl = 'https://github.com/lfoppiano/junidecode/issues'
-        githubRepo = 'lfoppiano/junidecode'
+        vcsUrl = 'https://github.com/gcardone/junidecode'
+        issueTrackerUrl = 'https://github.com/gcardone/junidecode/issues'
+        githubRepo = 'gcardone/junidecode'
 
         version {
             name = rootProject.version
