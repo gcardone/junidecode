@@ -17,8 +17,8 @@ apply plugin: 'maven'
 apply plugin: 'net.researchgate.release'
 apply plugin: 'com.jfrog.bintray'
 
-group = 'gcardone'
-version = '0.2'
+group = 'org.gcardone'
+version = '0.3'
 
 description = """A Unicode to ASCII Java Library"""
 
