@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.gcardone</groupId>
+    <groupId>net.gcardone</groupId>
     <artifactId>junidecode</artifactId>
     <packaging>jar</packaging>
     <version>0.3</version>
@@ -100,7 +100,7 @@
                                     <replacefilter token="#version#" value="${project.version}"/>
                                     <replacefilter token="#user.name#" value="${user.name}"/>
                                     <replacefilter token="#today#" value="${TODAY}"/>
-                                    <replacefilter token="#mainclass#" value="org.gcardone.junidecode.App"/>
+                                    <replacefilter token="#mainclass#" value="net.gcardone.junidecode.App"/>
                                 </replace>
                             </tasks>
                         </configuration>
