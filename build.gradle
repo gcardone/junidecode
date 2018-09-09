@@ -1,27 +1,88 @@
 plugins {
-    id 'java'
-    id 'application'
+  id 'application'
+  id 'java'
+  id 'maven'
+  id 'signing'
 }
 
 group = 'net.gcardone.junidecode'
+archivesBaseName = 'junidecode'
 version = '0.4'
-
-// Define the main class for the application
 mainClassName = 'net.gcardone.junidecode.App'
 
+repositories {
+  jcenter()
+}
+
 dependencies {
-    testCompile 'junit:junit:4.5'
+  testCompile 'junit:junit:4.5'
 }
 
 jar {
-    manifest {
-        attributes 'Main-Class': 'net.gcardone.junidecode.App'
-    }
+  manifest {
+    attributes 'Main-Class': 'net.gcardone.junidecode.App'
+  }
 }
 
-// In this section you declare where to find the dependencies of your project
-repositories {
-    // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+task javadocJar(type: Jar) {
+  classifier = 'javadoc'
+  from javadoc
+}
+
+task sourcesJar(type: Jar) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
+
+artifacts {
+  archives javadocJar, sourcesJar
+}
+
+signing {
+  sign configurations.archives
+}
+
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+      repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+        authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+        authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      pom.project {
+        name 'JUnidecode'
+        packaging 'jar'
+        description 'A Unicode to ASCII Java Library'
+        url 'https://github.com/gcardone/junidecode'
+
+        scm {
+          connection 'scm:git:git://github.com/gcardone/junidecode.git'
+          developerConnection 'scm:git:git://github.com/gcardone/junidecode.git'
+          url 'https://github.com/gcardone/junidecode'
+        }
+
+        licenses {
+          license {
+            name 'The Apache License, Version 2.0'
+            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          }
+        }
+
+        developers {
+          developer {
+            id 'gcardone'
+            name 'Giuseppe Cardone'
+            email 'ippatsuman@gmail.com'
+          }
+        }
+      }
+    }
+  }
 }
