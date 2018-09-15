@@ -1,3 +1,19 @@
+Changes in version 0.4.1
+------------------------
+
+* Set target compatibility to Java 1.7.
+
+Changes in version 0.4
+----------------------
+
+* Renamed package root to net.gcardone. I'm bad at naming.
+* Build system migrated to gradle.
+
+Changes in version 0.3
+----------------------
+
+* Renamed package root to org.gcardone.
+
 Changes in version 0.2
 ----------------------
 
