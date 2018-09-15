@@ -5,6 +5,25 @@ JUnidecode - A Unicode to ASCII Java Library
 
 > This page contains Unicode characters. If the font that you are using doesn't contain all the characters you may get a garbled output. In this case try to install and use a font with a good Unicode support like DejaVu. 
 
+tl;dr
+-----
+
+Convert Unicode strings to somewhat reasonable ASCII7-only strings. [Download junidecode.jar](#download) or [Install it from Maven Central](https://search.maven.org/artifact/net.gcardone.junidecode/junidecode), then strip diacritics and convert strings:
+
+```
+import static net.gcardone.junidecode.Junidecode.*;
+
+// ...
+
+// s = "résumé"
+String s = "r\u00E9sum\u00E9";
+System.out.print(unidecode(s));
+// prints "resume"
+```
+
+More details about the what, why, and limitations below.
+
+
 What is Unicode
 ---------------
 
@@ -156,7 +175,7 @@ Credits
 
 JUnidecode is a Java port of [Text::Unidecode](http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm) perl module by Sean M. Burke, who deserves all the credit (while I deserve all the blame for any error in JUnidecode).
 
-There is a beautiful article by Burke himself that explains the design choices behind "unidecoding": [http://interglacial.com/~sburke/tpj/as_html/tpj22.html](). Basically there are two idea behind this software:
+There is a beautiful article by Burke himself that explains the design choices behind "unidecoding": http://interglacial.com/~sburke/tpj/as_html/tpj22.html. Basically there are two idea behind this software:
 
 1. Writing a context aware transliteration library is an almost infeasible task. This is due to the complexity of many languages, for example Thai writing runs all togheter, in Arab a character should be transliterated in different ways based on the gender or other characteristics of the preceding word. So the first choice is: when a character can be transliterated in different ways, transliterate it to the way that is right most of the time.
 2. The same character can be transliterated in different ways in different languages, for example the same ideogram has a different transliteration in Mandarin, Japanese and Korean. The choice in this case is: try to please most of the people (in the case of ideogram Chinese transliteration is always preferred since more than 1 billion people speak it and it is usually the root from which other languages derived).
