@@ -277,6 +277,7 @@ class X06 {
         "D", // 0xfb
         "Gh", // 0xfc
         "&", // 0xfd
-        "+m" // 0xfe
+        "+m", // 0xfe
+        "" // 0xff
     };
 }

@@ -277,6 +277,7 @@ class X33 {
         "28d", // 0xfb
         "29d", // 0xfc
         "30d", // 0xfd
-        "31d" // 0xfe
+        "31d", // 0xfe
+        "gal" // 0xff
     };
 }

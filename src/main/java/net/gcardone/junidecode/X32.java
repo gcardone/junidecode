@@ -277,6 +277,7 @@ class X32 {
         "wa", // 0xfb
         "wi", // 0xfc
         "we", // 0xfd
-        "wo" // 0xfe
+        "wo", // 0xfe
+        "[?]" // 0xff
     };
 }
