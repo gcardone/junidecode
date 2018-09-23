@@ -195,7 +195,7 @@ class X20 {
         "W", // 0xa9
         "NS", // 0xaa
         "D", // 0xab
-        "EU", // 0xac
+        "EUR", // 0xac
         "K", // 0xad
         "T", // 0xae
         "Dr", // 0xaf

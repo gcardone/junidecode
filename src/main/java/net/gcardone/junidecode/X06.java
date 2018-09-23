@@ -278,6 +278,6 @@ class X06 {
         "Gh", // 0xfc
         "&", // 0xfd
         "+m", // 0xfe
-        "" // 0xff
+        "h" // 0xff
     };
 }

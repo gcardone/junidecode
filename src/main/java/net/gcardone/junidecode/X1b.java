@@ -16,11 +16,11 @@
 package net.gcardone.junidecode;
 
 /**
- * Character map for Unicode characters with codepoint U+22xx.
+ * Character map for Unicode characters with codepoint U+1Bxx.
  * @author Giuseppe Cardone
  * @version 0.1
  */
-class X22 {
+class X1b {
 
     public static final String[] map = new String[]{
         "[?]", // 0x00

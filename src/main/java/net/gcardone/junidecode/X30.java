@@ -278,6 +278,6 @@ class X30 {
         "", // 0xfc
         "\"", // 0xfd
         "\"", // 0xfe
-        "" // 0xff
+        "koto" // 0xff
     };
 }

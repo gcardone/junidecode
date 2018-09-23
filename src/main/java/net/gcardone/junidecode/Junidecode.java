@@ -130,6 +130,21 @@ public class Junidecode {
                     case 0x18:
                         map = X18.map;
                         break;
+                    case 0x18:
+                        map = X19.map;
+                        break;
+                    case 0x18:
+                        map = X1a.map;
+                        break;
+                    case 0x18:
+                        map = X1b.map;
+                        break;
+                    case 0x18:
+                        map = X1c.map;
+                        break;
+                    case 0x18:
+                        map = X1d.map;
+                        break;
                     case 0x1e:
                         map = X1e.map;
                         break;

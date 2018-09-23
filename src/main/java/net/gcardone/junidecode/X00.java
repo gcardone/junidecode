@@ -244,7 +244,7 @@ class X00 {
         "U", // 0xda
         "U", // 0xdb
         "U", // 0xdc
-        "U", // 0xdd
+        "Y", // 0xdd
         "Th", // 0xde
         "ss", // 0xdf
         "a", // 0xe0

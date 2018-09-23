@@ -263,20 +263,20 @@ class Xfd {
         "[?]", // 0xed
         "[?]", // 0xee
         "[?]", // 0xef
-        "", // 0xf0
-        "", // 0xf1
-        "", // 0xf2
-        "", // 0xf3
-        "", // 0xf4
-        "", // 0xf5
-        "", // 0xf6
-        "", // 0xf7
-        "", // 0xf8
-        "", // 0xf9
-        "", // 0xfa
-        "", // 0xfb
-        "[?]", // 0xfc
-        "[?]", // 0xfd
+        "{Salla}", // 0xf0
+        "{Qala}", // 0xf1
+        "Allah", // 0xf2
+        "Akbar", // 0xf3
+        "Mohammed", // 0xf4
+        "SL`M", // 0xf5
+        "Rasul", // 0xf6
+        "{Alayhi}", // 0xf7
+        "{WaSallam}", // 0xf8
+        "{Salla}", // 0xf9
+        "{Salla Llahu Alayhi WaSallam}", // 0xfa
+        "{Jalla Jalalahu}", // 0xfb
+        "Rial ", // 0xfc
+        "{Bismillah Ar-Rahman Ar-Rahimi}", // 0xfd
         "[?]", // 0xfe
         "[?]" // 0xff
     };

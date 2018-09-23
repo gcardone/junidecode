@@ -23,7 +23,7 @@ package net.gcardone.junidecode;
 class X4e {
 
     public static final String[] map = new String[]{
-        "[?] ", // 0x00
+        "Yi ", // 0x00
         "Ding ", // 0x01
         "Kao ", // 0x02
         "Qi ", // 0x03
