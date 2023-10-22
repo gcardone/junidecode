@@ -25,7 +25,10 @@ dependencies {
 
 jar {
   manifest {
-    attributes 'Main-Class': 'net.gcardone.junidecode.App'
+    attributes (
+        'Main-Class': 'net.gcardone.junidecode.App'
+        'Automatic-Module-Name': 'net.gcardone.junidecode'
+      )
   }
 }
 
