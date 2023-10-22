@@ -7,7 +7,7 @@ plugins {
 
 group = 'net.gcardone.junidecode'
 archivesBaseName = 'junidecode'
-version = '0.5'
+version = '0.5.1'
 mainClassName = 'net.gcardone.junidecode.App'
 
 repositories {
