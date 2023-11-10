@@ -99,6 +99,7 @@ public class JunidecodeTest {
             // lower case
             String lowerCase = Junidecode.unidecode(sp.getLeft(), Case.LOWER_CASE);
             assertEquals(sp.getRight().toLowerCase(Locale.ROOT), lowerCase);
+            // upper case
             String upperCase = Junidecode.unidecode(sp.getLeft(), Case.UPPER_CASE);
             assertEquals(sp.getRight().toUpperCase(Locale.ROOT), upperCase);
         }
