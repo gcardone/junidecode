@@ -41,6 +41,21 @@ public class Junidecode {
      * @return 7-bit ASCII valid string.
      */
     public static String unidecode(final String s) {
+
+        return unidecode(s, Case.ORIGINAL_CASE);
+    }
+
+    /**
+     * Strip diacritic marks and transliterates a unicode string to a valid
+     * 7-bit ASCII String.
+     * @since 0.5.1
+     * @param s Unicode String to transliterate.
+     * @param caseConversion the {@link Case} to convert to or {@code null}
+     *        to keep original case.
+     * @return 7-bit ASCII valid string.
+     */
+    public static String unidecode(final String s, final Case caseConversion) {
+
         StringBuilder sb = new StringBuilder();
         String[] map;
         for (int i = 0; i < s.length(); i++) {
@@ -627,9 +642,61 @@ public class Junidecode {
              * one is reserved.
              */
             if (low < map.length) {
-                sb.append(map[low]);
+                caseConversion.append(sb, map[low]);
             }
         }
         return sb.toString();
+    }
+
+    /**
+     * The desired character case.
+     */
+    public static enum Case {
+
+        /** Keep the original case. */
+        ORIGINAL_CASE() {
+            @Override
+            void append(StringBuilder sb, String ascii) {
+
+                sb.append(ascii);
+            }
+        },
+
+        /** Convert to lower case. */
+        LOWER_CASE() {
+
+            @Override
+            void append(StringBuilder sb, String ascii) {
+
+                int len = ascii.length();
+                for (int i = 0; i < len; i++) {
+                    char c = ascii.charAt(i);
+                    if ((c >= 'A') && (c <= 'Z')) {
+                        c += 32; // A = 65, a = 97 (65+32)
+                    }
+                    sb.append(c);
+                }
+            }
+        },
+
+        /** Convert to upper case. */
+        UPPER_CASE() {
+
+            @Override
+            void append(StringBuilder sb, String ascii) {
+
+                int len = ascii.length();
+                for (int i = 0; i < len; i++) {
+                    char c = ascii.charAt(i);
+                    if ((c >= 'a') && (c <= 'z')) {
+                        c -= 32; // a = 97, A = 65 (97-32)
+                    }
+                    sb.append(c);
+                }
+            }
+        };
+
+        abstract void append(StringBuilder sb, String ascii);
+
     }
 }

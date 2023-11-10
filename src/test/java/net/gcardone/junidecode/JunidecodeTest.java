@@ -18,6 +18,10 @@ package net.gcardone.junidecode;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.Locale;
+
+import net.gcardone.junidecode.Junidecode.Case;
+
 /**
  *
  * @author Giuseppe Cardone
@@ -92,6 +96,11 @@ public class JunidecodeTest {
             String decoded = Junidecode.unidecode(sp.getLeft());
             assertEquals(sp.getRight(), decoded);
             sevenBitPurity(decoded);
+            // lower case
+            String lowerCase = Junidecode.unidecode(sp.getLeft(), Case.LOWER_CASE);
+            assertEquals(sp.getRight().toLowerCase(Locale.ROOT), lowerCase);
+            String upperCase = Junidecode.unidecode(sp.getLeft(), Case.UPPER_CASE);
+            assertEquals(sp.getRight().toUpperCase(Locale.ROOT), upperCase);
         }
     }
 
