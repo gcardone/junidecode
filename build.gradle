@@ -1,96 +1,87 @@
 plugins {
   id 'application'
-  id 'java'
-  id 'maven'
+  id 'java-library'
+  id 'maven-publish'
   id 'signing'
+  id('io.github.gradle-nexus.publish-plugin') version '1.1.0'
 }
 
 group = 'net.gcardone.junidecode'
-archivesBaseName = 'junidecode'
 version = '0.5.1'
-mainClassName = 'net.gcardone.junidecode.App'
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
-compileJava {
-  sourceCompatibility = '1.7'
-  targetCompatibility = '1.7'
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+  withJavadocJar()
+  withSourcesJar()
 }
 
 dependencies {
-  testCompile 'junit:junit:4.5'
+  testImplementation("junit:junit:4.13.2")
+  testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
+
+    maxHeapSize = '1G'
+
+    testLogging {
+        events "passed"
+    }
 }
 
 jar {
   manifest {
     attributes (
-        'Main-Class': 'net.gcardone.junidecode.App'
+        'Main-Class': 'net.gcardone.junidecode.App',
         'Automatic-Module-Name': 'net.gcardone.junidecode'
       )
   }
 }
 
-task javadocJar(type: Jar) {
-  classifier = 'javadoc'
-  from javadoc
-}
-
-task sourcesJar(type: Jar) {
-  classifier = 'sources'
-  from sourceSets.main.allSource
-}
-
-artifacts {
-  archives javadocJar, sourcesJar
-}
-
-signing {
-  sign configurations.archives
-}
-
-
-uploadArchives {
+nexusPublishing {
   repositories {
-    mavenDeployer {
-      beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+    sonatype()
+  }
+}
 
-      repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-        authentication(userName: ossrhUsername, password: ossrhPassword)
-      }
-
-      snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-        authentication(userName: ossrhUsername, password: ossrhPassword)
-      }
-
-      pom.project {
-        name 'JUnidecode'
-        packaging 'jar'
-        description 'A Unicode to ASCII Java Library'
-        url 'https://github.com/gcardone/junidecode'
-
-        scm {
-          connection 'scm:git:git://github.com/gcardone/junidecode.git'
-          developerConnection 'scm:git:git://github.com/gcardone/junidecode.git'
-          url 'https://github.com/gcardone/junidecode'
-        }
-
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from(components.java)
+      pom {
+        name = 'JUnidecode'
+        description = 'A Unicode to ASCII Java Library'
+        url = 'https://github.com/gcardone/junidecode'
         licenses {
           license {
-            name 'The Apache License, Version 2.0'
-            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            name = 'The Apache License, Version 2.0'
+            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
           }
         }
-
         developers {
           developer {
-            id 'gcardone'
-            name 'Giuseppe Cardone'
-            email 'ippatsuman@gmail.com'
-          }
+            id = 'gcardone'
+            name = 'Giuseppe Cardone'
+            email = 'ippatsuman@gmail.com'
+           }
+        }
+        scm {
+          url = 'https://github.com/gcardone/junidecode'
+          connection = 'scm:git:git://github.com/gcardone/junidecode.git'
+          developerConnection = 'scm:git:git://github.com/gcardone/junidecode.git'
         }
       }
     }
   }
+}
+
+signing {
+  sign publishing.publications.mavenJava
 }

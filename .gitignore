@@ -17,3 +17,6 @@ target/
 # Gradle target directory
 build/
 .gradle/
+
+# Gradle properties
+gradle.properties
