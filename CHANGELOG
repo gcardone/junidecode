@@ -2,6 +2,7 @@ Changes in version 0.5.1
 ----------------------
 
 * Added support for JPMS - thanks to https://github.com/hohwille.
+* Added support for efficient case conversion
 
 Changes in version 0.5
 ----------------------
