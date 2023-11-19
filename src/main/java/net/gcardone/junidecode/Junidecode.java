@@ -42,7 +42,7 @@ public class Junidecode {
      */
     public static String unidecode(final String s) {
 
-        return unidecode(s, Case.ORIGINAL_CASE);
+        return unidecode(s, null);
     }
 
     /**
@@ -642,7 +642,11 @@ public class Junidecode {
              * one is reserved.
              */
             if (low < map.length) {
-                caseConversion.append(sb, map[low]);
+                if (caseConversion == null) {
+                    sb.append(map[low]);
+                } else {
+                    caseConversion.append(sb, map[low]);
+                }
             }
         }
         return sb.toString();
@@ -652,15 +656,6 @@ public class Junidecode {
      * The desired character case.
      */
     public static enum Case {
-
-        /** Keep the original case. */
-        ORIGINAL_CASE() {
-            @Override
-            void append(StringBuilder sb, String ascii) {
-
-                sb.append(ascii);
-            }
-        },
 
         /** Convert to lower case. */
         LOWER_CASE() {
