@@ -36,6 +36,10 @@ tasks.named('test', Test) {
     }
 }
 
+compileJava {
+  options.release = 11
+}
+
 jar {
   manifest {
     attributes (
