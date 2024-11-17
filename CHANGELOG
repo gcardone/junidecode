@@ -1,3 +1,8 @@
+Changes in version 0.5.2
+----------------------
+
+* Set target compatibility to Java 11 (class file version 55.0)
+
 Changes in version 0.5.1
 ----------------------
 
